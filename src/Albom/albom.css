@@ -1,0 +1,27 @@
+.albom {
+  padding-top: 15px;
+}
+
+.albom__bar {
+  margin-bottom: 20px;
+}
+
+.albom__bar .btn {
+  margin-left: 15px;
+}
+
+.albom__bar .btn:first-child {
+  margin-left: 0;
+}
+
+.albom__bar-actions {
+  text-align: right;
+}
+
+.albom__head {
+  margin-bottom: 30px;
+}
+
+.gallery__item {
+  margin-bottom: 30px;
+}

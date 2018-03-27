@@ -1,0 +1,16 @@
+.upload {
+  margin-bottom: 30px;
+}
+
+.upload__thumb {
+  margin-bottom: 15px;
+  height: 78.05%;
+}
+
+.upload__thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 0;
+}
