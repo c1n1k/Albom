@@ -1,0 +1,13 @@
+{
+  "name": "albom",
+  "scripts": {},
+  "env": {},
+  "formation": {},
+  "addons": [],
+  "repository": "https://github.com/c1n1k/albom",
+  "buildpacks": [
+    {
+      "url": "https://github.com/mars/create-react-app-buildpack.git"
+    }
+  ]
+}
