@@ -93,7 +93,7 @@ export default class Albom extends Component {
     const gallery = albomImages.map(item => {
       if (item) {
         return (
-          <Col xs="4" key={item.id} className="gallery__item">
+          <Col xs="12" sm="4" key={item.id} className="gallery__item">
             <Card className="gallery__img-wrap">
               <CardImg width="100%" src={item.url} className="gallery__img" />
               <Button id={item.id} onClick={this.removeImage}>
@@ -108,23 +108,23 @@ export default class Albom extends Component {
     return (
       <Container className="albom">
         <Row className="albom__bar">
-          <Col xs="2">
+          <Col xs="12" sm="2">
             <Button color="link" onClick={this.back}>
               Назад
             </Button>
           </Col>
-          <Col xs="10" className="albom__bar-actions">
-            <Button onClick={this.toggleAddPhoto}>Добавить фото</Button>
+          <Col xs="12" sm="10" className="albom__bar-actions">
+            <Button onClick={this.toggleAddPhoto}>Загрузить</Button>
             <Button onClick={this.toggleEdit}>Переименовать</Button>
             <Button id={albom.id} onClick={this.handleRemove}>
-              Удалить альбом
+              Удалить
             </Button>
           </Col>
         </Row>
         {this.state.isEdit ? (
           <Form name="renameAlbom" onSubmit={this.handleSubmit}>
             <Row className="albom__head">
-              <Col xs="12" sm="10">
+              <Col xs="auto" sm="10">
                 <Input
                   type="text"
                   name="newName"
@@ -133,7 +133,7 @@ export default class Albom extends Component {
                   autoFocus
                 />
               </Col>
-              <Col xs="12" sm="2">
+              <Col xs="auto" sm="2">
                 <Button color="success">Изменить</Button>
               </Col>
             </Row>

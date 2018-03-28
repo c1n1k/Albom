@@ -44,6 +44,10 @@ export default class Add extends Component {
           alboms[albomIndex].items.push(item.data.id);
         });
 
+        alboms[albomIndex].thumb = alboms[albomIndex].thumb
+          ? alboms[albomIndex].thumb
+          : alboms[albomIndex].items[0];
+
         save(images, "images");
         save(alboms, "alboms");
 
@@ -95,7 +99,7 @@ export default class Add extends Component {
     return (
       <Form name="loadImage" onSubmit={this.handleSubmit}>
         <Row className="upload">
-          <Col>
+          <Col xs="12" sm="9" md="10">
             <Input
               type="file"
               name="file"
@@ -105,7 +109,7 @@ export default class Add extends Component {
               onChange={this.handleChange}
             />
           </Col>
-          <Col>
+          <Col xs="12" sm="3" md="2">
             <Button color="success">Загрузить</Button>
           </Col>
         </Row>

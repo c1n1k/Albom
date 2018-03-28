@@ -30,8 +30,8 @@ function createAlbom(event) {
     items: []
   };
 
-  const storage = load();
-  storage ? save([...storage, albom], "alboms") : save([albom]);
+  const storage = load("alboms");
+  storage ? save([...storage, albom], "alboms") : save([albom], "alboms");
   form.elements.albomName.value = "";
 }
 

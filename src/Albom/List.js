@@ -13,10 +13,11 @@ import {
 } from "reactstrap";
 import { Link } from "react-router-dom";
 import { createAlbom, load } from "../helper.js";
+import placeholder from "./empty.png";
 import "./list.css";
 
 export default class Albom extends Component {
-  initialState = { alboms: load("alboms") };
+  initialState = { alboms: load("alboms"), images: load("images") };
   state = { ...this.initialState };
 
   handleSubmit = event => {
@@ -27,10 +28,18 @@ export default class Albom extends Component {
   render() {
     const alboms = this.state.alboms.map(albom => {
       return (
-        <Col xs="4" key={albom.id}>
+        <Col xs="12" sm="4" key={albom.id} className="list__item">
           <Link to={`/${albom.id}`}>
             <Card>
-              <CardImg width="100%" src={albom.thumb ? albom.thumb : ""} />
+              <div className="list__item-img">
+                <CardImg
+                  className=""
+                  width="100%"
+                  src={
+                    albom.thumb ? this.state.images[albom.thumb] : placeholder
+                  }
+                />
+              </div>
               <CardBody>
                 <CardTitle>{albom.name}</CardTitle>
               </CardBody>
@@ -43,14 +52,14 @@ export default class Albom extends Component {
       <Container className="list">
         <Form name="createAlbom" onSubmit={this.handleSubmit}>
           <Row className="list__section">
-            <Col>
+            <Col xs="auto" sm="10">
               <Input
                 type="text"
                 name="albomName"
                 placeholder="Название альбома"
               />
             </Col>
-            <Col>
+            <Col xs="auto" sm="2">
               <Button>Создать</Button>
             </Col>
           </Row>

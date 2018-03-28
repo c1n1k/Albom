@@ -5,3 +5,22 @@
 .list__section {
   margin-bottom: 20px;
 }
+
+.list__item {
+  margin-bottom: 30px;
+}
+
+.list__item-img {
+  position: relative;
+  padding-bottom: 70%;
+}
+
+.list__item-img img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
